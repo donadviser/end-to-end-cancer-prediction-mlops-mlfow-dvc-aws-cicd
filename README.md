@@ -15,7 +15,14 @@
 9. Update the dvc.yaml
 
 
+## Git commands
+```
+git rm -r --cached artefacts/
+git update-index
+git reset --soft HEAD~1
+git clean -f  
 
+```
 
 
 ## MLflow
@@ -30,21 +37,14 @@
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URI=https://dagshub.com/donadviser/end-to-end-cancer-prediction-mlops-mlfow-dvc-aws-cicd.mlflow \
-MLFLOW_TRACKING_USERNAME=donadviser \
-MLFLOW_TRACKING_PASSWORD=6824692c47a4545eac5b10041d5c8edbcef0 \
-python script.py
+```
+import dagshub
+dagshub.init(repo_owner='donadviser', repo_name='end-to-end-cancer-prediction-mlops-mlfow-dvc-aws-cicd', mlflow=True)
 
-Run this to export as env variables:
-
-```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/donadviser/end-to-end-cancer-prediction-mlops-mlfow-dvc-aws-cicd.mlflow
-
-export MLFLOW_TRACKING_USERNAME=donadviser 
-
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9353c5b10041d5c8edbcef0
-
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
 ```
 
 
