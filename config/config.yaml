@@ -21,4 +21,4 @@ training:
 
 
 evaluation:
-  mlflow_uri: "https://dagshub.com/entbappy/chest-Disease-Classification-MLflow-DVC.mlflow"
+  mlflow_uri: "https://dagshub.com/donadviser/end-to-end-cancer-prediction-mlops-mlfow-dvc-aws-cicd.mlflow"
