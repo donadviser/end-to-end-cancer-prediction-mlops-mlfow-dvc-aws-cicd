@@ -82,3 +82,9 @@ class Training:
         )
 
         self.save_model(self.config.trained_model_path, self.model)
+
+
+        os.makedirs(self.config.trained_model_for_prediction_dir, exist_ok=True)
+        self.save_model(self.config.trained_model_for_prediction_path, self.model)
+
+        

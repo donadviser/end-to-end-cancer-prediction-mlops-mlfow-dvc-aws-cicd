@@ -18,6 +18,8 @@ prepare_base_model:
 training:
   root_dir: artefacts/training
   trained_model_path: artefacts/training/model.h5
+  trained_model_for_prediction_dir: model
+  trained_model_for_prediction_path: model/model.h5
 
 
 evaluation:

@@ -59,6 +59,8 @@ class ConfigurationManager:
         training_data = os.path.join(self.config.data_ingestion.unzip_dir, self.config.data_ingestion.zipped_file_name)
         create_directories([training.root_dir])
 
+        create_directories([training.trained_model_for_prediction_dir])
+
         training_config = TrainingConfig(
             root_dir = Path(training.root_dir),
             trained_model_path = Path(training.trained_model_path),
@@ -67,7 +69,9 @@ class ConfigurationManager:
             params_epochs = params.EPOCHS,
             params_batch_size = params.BATCH_SIZE,
             params_is_augmentation = params.AUGMENTATION,
-            params_image_size = self.params.IMAGE_SIZE
+            params_image_size = self.params.IMAGE_SIZE,
+            trained_model_for_prediction_dir = Path(training.trained_model_for_prediction_dir),
+            trained_model_for_prediction_path = Path(training.trained_model_for_prediction_path)
         )
 
         return training_config
