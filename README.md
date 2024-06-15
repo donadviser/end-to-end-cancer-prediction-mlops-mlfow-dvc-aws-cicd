@@ -50,6 +50,7 @@ with mlflow.start_run():
 
 
 ### DVC cmd
+Using DVC for pipeline tracking
 
 1. dvc init
 2. dvc repro

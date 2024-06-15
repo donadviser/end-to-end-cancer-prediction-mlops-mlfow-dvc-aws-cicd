@@ -20,6 +20,7 @@ class DataIngestion:
             zip_download_dir = self.config.local_data_file
             root_dir = self.config.root_dir
             os.makedirs(root_dir, exist_ok=True)
+            #os.makedirs("artifacts/data_ingestion", exist_ok=True)
             logging.info(f"Downloading data from {dataset_url} to {zip_download_dir}")
 
             file_id = dataset_url.split("/")[-2]
